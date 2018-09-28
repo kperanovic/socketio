@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: socketio
+  namespace: common-dev
+  labels:
+    app: socketio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: socketio
+  template:
+    metadata:
+      labels:
+        app: socketio
+    spec:
+      containers:
+        - name: socketio
+          image: eu.gcr.io/idb-mobile/common.socketio:0.1.3
+          ports:
+            - containerPort: 50051
+          env:
+            - name: APP_NAME
+              value: common/socketio-dev
+            - name: APP_PORT
+              value: "50051"

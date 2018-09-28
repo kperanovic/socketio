@@ -1,0 +1,22 @@
+{
+  "name": "socketio",
+  "version": "1.0.0",
+  "description": "Generic library for handling web socket events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kristijan Peranovic",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.16.0",
+    "@types/pino": "^5.6.0",
+    "@types/socket.io": "^1.4.38",
+    "cids": "^0.5.5",
+    "express": "^4.16.3",
+    "http": "^0.0.0",
+    "moniker": "^0.1.2",
+    "pino": "^5.6.2",
+    "socketio": "^1.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: socketio
+  namespace: common-staging
+  labels:
+    app: socketio
+spec:
+  selector:
+    app: socketio
+  ports:
+    - port: 50051

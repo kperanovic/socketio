@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:5050');
+
+        socket.on('connection', function (data) {
+            console.log(data);
+
+            socket.emit('init', {
+                name: 'testClient'
+            })
+        })
+
+        socket.emit('event', {
+            event: 'testEvent',
+            ref: Math.random(),
+            target: "testClient",
+            data: {
+                example: 'Data is been handled outside of the emitter. Pass only the results you need. DO NOT pass functions!'
+            }
+        });
+
+        socket.on('event-result', (data) => {
+            console.log(data)
+        })
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
