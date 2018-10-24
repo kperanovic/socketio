@@ -4,7 +4,8 @@ import * as Http from 'http';
 import * as Moniker from 'moniker';
 import * as SocketIO from 'socket.io';
 import * as cLogger from "./logger";
-import * as  cid from "cids";
+import * as uuid from "uuid";
+
 
 
 /* eslint-disable */
@@ -77,7 +78,7 @@ function main() {
     });
 
     hook.on('event', (event: any) => {
-      const log = logger.child({ cid: cid.newCid() });
+      const log = logger.child({ cid: uuid.v4() });
       log.info({ event }, 'Event received');
 
       // If event target is not set,
