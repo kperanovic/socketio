@@ -2,8 +2,11 @@
   "compilerOptions": {
     "alwaysStrict": true,
     "lib": [
-      "es2015",
+      "es2016",
       "es2017"
+    ],
+    "typeRoots": [
+      "./declarations"
     ],
     "module": "commonjs",
     "noFallthroughCasesInSwitch": true,
@@ -15,6 +18,7 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "target": "es6",
+    "inlineSourceMap": true,
   },
   "exclude": [
     "node_modules"
